@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Items/style.css";
 const Items = (props) => {
-  
+  const check = props.editing;
 
   return (
     <>
-      {props.editing ? (
+      {check ? (
         <>
           <li>
-            {/* <form onSubmit={props.submitHandler(props.ide,props.data)}> */}
               <input type="text" defaultValue={props.data} onChange={props.newDataChange}></input>
               <button className="save" onClick={()=>{props.submitHandler(props.ide,props.data)}}>Save</button>
-              {/* <button className="save" type="submit">Save</button> */}
-            {/* </form> */}
           </li>
         </>
       ) : (
