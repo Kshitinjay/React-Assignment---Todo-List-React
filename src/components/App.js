@@ -47,10 +47,17 @@ function App() {
     console.log(ide,data);
     
     console.log("newData is",newData);
-    listOfItems[ide]=newData;
-    setEditing(false);
-    console.log("completed");
-    console.log(editing);
+    if(!newData){
+      alert("no data");
+      return;
+    }
+    else{
+      listOfItems[ide]=newData;
+      setEditing(false);
+      console.log("completed");
+      console.log(editing);
+    }
+    
     // console.log(`item at ${ide} is ${listOfItems[ide]}`);
     // setListOfItems(listOfItems[])
     // const newArr = 
