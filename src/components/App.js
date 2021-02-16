@@ -33,7 +33,7 @@ function App() {
   
   const editItem = () => {
     setEditing(true);
-    console.log("edit clicked");
+    // console.log("edit clicked");----------------------
   };
 
 
@@ -44,9 +44,9 @@ function App() {
   }
   const submitHandler = (ide,data)=>{
     // event.preventDefault();
-    console.log(ide,data);
+    // console.log(ide,data);-----------------
     
-    console.log("newData is",newData);
+    // console.log("newData is",newData);----------------
     if(!newData){
       alert("no data");
       return;
@@ -54,8 +54,8 @@ function App() {
     else{
       listOfItems[ide]=newData;
       setEditing(false);
-      console.log("completed");
-      console.log(editing);
+      // console.log("completed");--------------------
+      // console.log(editing);----------------------
     }
     
     // console.log(`item at ${ide} is ${listOfItems[ide]}`);
