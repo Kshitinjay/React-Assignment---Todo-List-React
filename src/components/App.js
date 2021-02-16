@@ -5,6 +5,7 @@ import "./../styles/App.css";
 function App() {
   const [item, setItem] = useState("");
   const [listOfItems, setListOfItems] = useState([]);
+  const [editing, setEditing] = useState(false);
 
   const handleChange = (event) => {
     setItem(event.target.value);
@@ -29,9 +30,43 @@ function App() {
     });
   };
 
-  const editItem = (ide,data) =>{
+  
+  const editItem = () => {
+    setEditing(true);
     console.log("edit clicked");
+  };
+
+
+  const [newData,setNewData] = useState("");
+
+  const newDataChange = (event) =>{
+    setNewData(event.target.value)
   }
+  const submitHandler = (ide,data)=>{
+    // event.preventDefault();
+    console.log(ide,data);
+    
+    console.log("newData is",newData);
+    listOfItems[ide]=newData;
+    setEditing(false);
+    console.log("completed");
+    console.log(editing);
+    // console.log(`item at ${ide} is ${listOfItems[ide]}`);
+    // setListOfItems(listOfItems[])
+    // const newArr = 
+    
+    // setListOfItems((allItems) => {
+    //   return allItems.map((index) => {
+    //     if(index===data){
+    //       return [...allItems, data];
+    //     }
+    //   });
+    // });
+    // setListOfItems((oldItems) => {
+    //   return [...oldItems, data];
+    // });
+  }
+
 
   return (
     <div id="main">
@@ -60,6 +95,12 @@ function App() {
                   data={elem}
                   deleteItems={deleteItem}
                   editItems={editItem}
+                  editing={editing}
+                  // saveItem={handleChange}
+                  // addItems={addItems}
+                  submitHandler={submitHandler}
+                  // newData={newData}
+                  newDataChange={newDataChange}
                 />
               );
             })}
